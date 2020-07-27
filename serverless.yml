@@ -36,7 +36,7 @@ provider:
 
 functions:
   # Defines an HTTP API endpoint that calls the main function in create.js
-  # - path: url path is /videos
+  # - path: url path is /users/me/videos
   # - method: POST request
   # - cors: enabled CORS (Cross-Origin Resource Sharing) for browser cross
   #     domain api call
@@ -45,51 +45,73 @@ functions:
     handler: create.main
     events:
       - http:
-          path: videos
+          path: users/me/videos
           method: post
           cors: true
           authorizer: aws_iam
   get:
     # Defines an HTTP API endpoint that calls the main function in get.js
-    # - path: url path is /videos/{id}
+    # - path: url path is /users/me/videos/{id}
     # - method: GET request
     handler: get.main
     events:
       - http:
-          path: videos/{id}
+          path: users/me/videos/{id}
           method: get
           cors: true
           authorizer: aws_iam
-  list:
-    # Defines an HTTP API endpoint that calls the main function in list.js
-    # - path: url path is /videos
+  getOther:
+    # Defines an HTTP API endpoint that calls the main function in getOther.js
+    # - path: url path is /users/one/videos/{id}
     # - method: GET request
-    handler: list.main
+    handler: getOther.main
     events:
       - http:
-          path: videos
+          path: users/one/videos/{id}
+          method: get
+          cors: true
+          authorizer: aws_iam
+  listOne:
+    # Defines an HTTP API endpoint that calls the main function in listOne.js
+    # - path: url path is /users/me/videos
+    # - method: GET request
+    handler: listOne.main
+    events:
+      - http:
+          path: users/me/videos
+          method: get
+          cors: true
+          authorizer: aws_iam
+  listAll:
+    # Defines an HTTP API endpoint that calls the main function in listAll.js
+    # - path: url path is /users/all/videos
+    # - method: GET request
+    handler: listAll.main
+    events:
+      - http:
+          path: users/all/videos
           method: get
           cors: true
           authorizer: aws_iam
   update:
     # Defines an HTTP API endpoint that calls the main function in update.js
-    # - path: url path is /videos/{id}
+    # - path: url path is /users/me/videos/{id}
     # - method: PUT request
     handler: update.main
     events:
       - http:
-          path: videos/{id}
+          path: users/me/videos/{id}
           method: put
           cors: true
           authorizer: aws_iam
   delete:
     # Defines an HTTP API endpoint that calls the main function in delete.js
-    # - path: url path is /videos/{id}
+    # - path: url path is /users/me/videos/{id}
     # - method: DELETE request
     handler: delete.main
     events:
       - http:
-          path: videos/{id}
+          path: users/me/videos/{id}
           method: delete
           cors: true
           authorizer: aws_iam

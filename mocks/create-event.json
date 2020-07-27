@@ -1,8 +1,8 @@
 {
-  "body": "{\"title\":\"hello world\",\"description\":\"a description for the hello world short movie\",\"movie\":\"hello.mp4\"}",
+  "body": "{\"title\":\"A whole new world\",\"description\":\"just like what the title says\",\"movie\":\"awnw.mp4\"}",
   "requestContext": {
     "identity": {
-      "cognitoIdentityId": "USER-SUB-1234"
+      "cognitoIdentityId": "USER-SUB-5678"
     }
   }
 }
