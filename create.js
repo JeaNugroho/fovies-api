@@ -28,7 +28,9 @@ export const main = handler(async (event, context) => {
       videoId: uuid.v1(),
       title: data.title,
       description: data.description,
-      movie: data.movie,
+      movieKey: data.movieKey,
+      posterUrl: data.posterUrl,
+      avatar: data.avatar,
       createdAt: dateFormat(now, "mediumDate")
     }
   };

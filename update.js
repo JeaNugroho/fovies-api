@@ -14,11 +14,12 @@ export const main = handler(async (event, context) => {
     },
     // 'UpdateExpression' defines the attributes to be updated
     // 'ExpressionAttributeValues' defines the value in the update expression
-    UpdateExpression: "SET title = :title, description = :description, movie = :movie",
+    UpdateExpression: "SET title = :title, description = :description, movieKey = :movieKey, posterUrl = :posterUrl",
     ExpressionAttributeValues: {
       ":title": data.title,
       ":description": data.description,
-      ":movie": data.movie
+      ":movieKey": data.movieKey,
+      ":posterUrl": data.posterUrl
     },
     // 'ReturnValues' specifies if and how to return the item's attributes,
     // where ALL_NEW returns all attributes of the item after the update; you
