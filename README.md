@@ -11,4 +11,6 @@ The mocks directory has the tests for our endpoints.\
 \
 The AWS DynamoDB, S3, and Cognito, are manually created in the console. They are used for storing video/movie info/details (DynamoDB), store the movie files (S3), and handle authentication and authorization (Cognito), respectively.\
 The DynamoDB has a partition configuration (primary key: userId, sorting key: videoId) with several other fields (movieKey, posterUrl, createdAt, and gravatarUrl). The movieKey is used to get the file from S3.\
-The back-end only deals with the DynamoDB part. The S3 and Cognito parts are handled in the front-end side through AWS Amplify.
+The back-end only deals with the DynamoDB part. The S3 and Cognito parts are handled in the front-end side through AWS Amplify.\
+\
+The Serverless code template was brought by [AnomalyInnovations](#https://github.com/AnomalyInnovations/serverless-nodejs-starter).
